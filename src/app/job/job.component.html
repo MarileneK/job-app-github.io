@@ -1,0 +1,43 @@
+<i class="far fa-comments"></i>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-5">
+
+            <div
+            class="card"
+            style="width: 18rem;"
+            *ngFor="let job of jobsList"
+            >
+                <div class="card-body">
+                    <h4 class="card-title">{{job.title}}</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">{{job.firm}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{job.salary}}</h6>
+                    <p class="card-text">{{job.shortDescription}}</p>
+                    <a
+                    href="#"
+                    class="card-link"
+                    (click)=detailOffer(job)
+                    >En savoir plus</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-7">
+
+            <div style="width: 40rem;">
+                <div class="card-body">
+                    <h1 class="card-title">{{clickedOfferDetails?.title}}</h1>
+                    <h4 class="card-subtitle mb-2 text-muted">{{clickedOfferDetails?.firm}}</h4>
+                    <h5 class="card-subtitle mb-2 text-muted">{{clickedOfferDetails?.salary}}</h5>
+                    <h6>{{clickedOfferDetails?.longDescription}}</h6>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
